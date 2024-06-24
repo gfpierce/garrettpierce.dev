@@ -1,0 +1,40 @@
+---
+import { siteTitleConfig } from "../../config.astro";
+const siteTitle = siteTitleConfig;
+const id = "siteHeader";
+
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../styles/global.scss" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation" class="bg-gray">
+    <div class="navbar-brand">
+      <a
+        role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="main-nav"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="main-nav" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/"> Home </a>
+        <a class="navbar-item" href="/uses"> Uses </a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="/contact">Contact Me!</a>
+      </div>
+    </div>
+  </nav>
+</body>

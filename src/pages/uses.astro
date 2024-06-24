@@ -1,0 +1,302 @@
+---
+import Header from "../components/Header.astro";
+import UsesItem from "../components/UsesItem.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <script
+      src="https://unpkg.com/htmx.org@2.0.0"
+      integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+      crossorigin="anonymous"></script>
+    <title>Uses</title>
+  </head>
+  <style>
+    .bg-gray {
+      background-color: $bg-gray;
+    }
+  
+    .highlighted-tab {
+      border: 3px solid #34495e;
+    }
+  </style>
+  <body class="bg-gray">
+    <Header />
+    <div class="container">
+      <div class="has-text-centered">
+        <p>
+          Inspired by Wes Bos and <a href="https://uses.tech" target="_blank"
+            >uses.tech</a
+          >, this is my /uses page.
+        </p>
+      </div>
+      <div
+        x-data="{ selectedId: null, init() { this.$nextTick(() => this.select(this.$id('tab', 1))) }, select(id) { this.selectedId = id }, isSelected(id) { return this.selectedId === id }, whichChild(el, parent) { return Array.from(parent.children).indexOf(el) + 1} }"
+        x-id="['tab']"
+        class="container"
+      >
+        <br />
+        <!-- Tab List -->
+        <ul
+          x-ref="tablist"
+          @keydown.right.prevent.stop="$focus.wrap().next()"
+          @keydown.home.prevent.stop="$focus.first()"
+          @keydown.page-up.prevent.stop="$focus.first()"
+          @keydown.left.prevent.stop="$focus.wrap().prev()"
+          @keydown.end.prevent.stop="$focus.last()"
+          @keydown.page-down.prevent.stop="$focus.last()"
+          role="tablist"
+          class="is-flex"
+        >
+          <li>
+            <button
+              :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+              @click="select($el.id)"
+              @mousedown.prevent
+              @focus="select($el.id)"
+              type="button"
+              :tabindex="isSelected($el.id) ? 0 : -1"
+              :aria-selected="isSelected($el.id)"
+              :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
+              role="tab"
+              class="button is-inline-flex"
+            >
+              Hardware
+            </button>
+          </li>
+          <li>
+            <button
+              :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+              @click="select($el.id)"
+              @mousedown.prevent
+              @focus="select($el.id)"
+              type="button"
+              :tabindex="isSelected($el.id) ? 0 : -1"
+              :aria-selected="isSelected($el.id)"
+              :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
+              role="tab"
+              class="button is-inline-flex"
+            >
+              Audio Gear
+            </button>
+          </li>
+          <li>
+            <button
+              :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+              @click="select($el.id)"
+              @mousedown.prevent
+              @focus="select($el.id)"
+              type="button"
+              :tabindex="isSelected($el.id) ? 0 : -1"
+              :aria-selected="isSelected($el.id)"
+              :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
+              role="tab"
+              class="button is-inline-flex"
+            >
+              Furniture
+            </button>
+          </li>
+          <li>
+            <button
+              :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+              @click="select($el.id)"
+              @mousedown.prevent
+              @focus="select($el.id)"
+              type="button"
+              :tabindex="isSelected($el.id) ? 0 : -1"
+              :aria-selected="isSelected($el.id)"
+              :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
+              role="tab"
+              class="button is-inline-flex"
+            >
+              Software
+            </button>
+          </li>
+          <li>
+            <button
+              :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+              @click="select($el.id)"
+              @mousedown.prevent
+              @focus="select($el.id)"
+              type="button"
+              :tabindex="isSelected($el.id) ? 0 : -1"
+              :aria-selected="isSelected($el.id)"
+              :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
+              role="tab"
+              class="button is-inline-flex"
+            >
+              Desk Setup
+            </button>
+          </li>
+          <li>
+            <button
+              :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+              @click="select($el.id)"
+              @mousedown.prevent
+              @focus="select($el.id)"
+              type="button"
+              :tabindex="isSelected($el.id) ? 0 : -1"
+              :aria-selected="isSelected($el.id)"
+              :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
+              role="tab"
+              class="button is-inline-flex"
+            >
+              Other Gear
+            </button>
+          </li>
+        </ul>
+        <div>
+          <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            role="tabpanel"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+          >
+            <UsesItem
+              itemName="Lenovo Thinkpad T14 Gen 4"
+              itemDescription="Work laptop, used daily."
+            />
+            <UsesItem
+              itemName="Apple M1 Pro Macbook Pro"
+              itemDescription="Personal laptop, used for things outside of work."
+              itemNumber="Two"
+            />
+            <UsesItem
+              itemName="Apple Intel Mac Mini"
+              itemDescription="Used for music production."
+              itemNumber="Three"
+            />
+          </section>
+          <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            role="tabpanel"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+          >
+            <UsesItem
+                itemName="Focusrite Scarlett 18i8 3rd Gen"
+                itemDescription="Audio interface, every instrument goes through this."
+              />
+              <UsesItem
+                itemName="Arturia KeyLab Essential 61"
+                itemDescription="MIDI Controller, used to control a variety of software instruments."
+              />
+              <UsesItem
+                itemName="KRK Rokit 5 G4"
+                itemDescription="Studio Monitors."
+              />
+          </section>
+          <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            role="tabpanel"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+          >
+            <UsesItem
+                itemName="Herman Miller Sayl Chair"
+                itemDescription="Fancy desk chair because I\'m kind of obsessed with ergonomics."
+              />
+              <UsesItem
+                itemName="UPLIFT Standing Desk V2 Bamboo"
+                itemDesription="Fancy standing desk that I mostly sit at."
+              />
+          </section>
+          <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            role="tabpanel"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+          >
+            <UsesItem
+                itemName={"Visual Studio Code"}
+                itemDescription={"Cross-platform editor that I use both on Mac OS X and Windows"}
+              />
+              <UsesItem
+                itemName={"iTerm 2 (Mac OS X)"}
+                itemDescription={"Mac OS X terminal, used with Oh my zsh. I am giving a trial run to Warp currently."}
+              />
+              <UsesItem
+                itemName={"Logic Pro X"}
+                itemDescription={"DAW used for all audio recording and production."}
+              />
+              <UsesItem
+                itemName={"Cascadia Code"}
+                itemDescription={"Coding font from Microsoft that I use in VS Code."}
+              />
+              <UsesItem
+                itemName={"Windows Terminal"}
+                itemDescription={"Terminal on Windows, used with Oh my posh"}
+              />
+          </section>
+          <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            role="tabpanel"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+          >
+            <UsesItem
+                itemName={"Dell S2715H Monitor"}
+                itemDescription={"Vertical monitor, used at work for Teams and Outlook. Used for docs on personal projects."}
+              />
+              <UsesItem
+                itemName={'LG 29" Ultrawide Monitor'}
+                itemDescription={"LG Ultrawide Monitor. Used as the primary monitor, usually split between browser and VS Code."}
+              />
+              <UsesItem
+                itemName={"Lenovo USB C Dock"}
+                itemDescription={"Everything plugs into this, including monitors, keyboard, mouse, and phone charger."}
+              />
+          </section>
+          <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            role="tabpanel"
+            :aria-labeleldby="$id('tab', whichChild($el, $el.parentElement))"
+          >
+            <UsesItem
+                itemName={"Topo Designs Rover Pack"}
+                itemDescription={"Backpack that goes most everywhere with me. I actually don't like it all that much. I am open to backpack suggestions."}
+                itemNumber="Seventeen"
+              />
+          </section>
+        </div>
+        <!-- Panels -->
+      </div>
+      <div class="tabs-wrapper">
+        <div class="tabs">
+          <ul>
+            <li class="is-active" id="hardware-tab"><a>Hardware</a></li>
+            <li id="audio-gear-tab"><a>Audio Gear</a></li>
+            <li id="furniture-tab"><a>Furniture</a></li>
+            <li id="software-tab"><a>Software</a></li>
+            <li id="desk-setup-tab"><a>Desk Setup</a></li>
+            <li id="other-gear-tab"><a>Other Gear</a></li>
+          </ul>
+        </div>
+        <div class="tabs-content">
+          <ul>
+            <li class="is-active" id="hardware-content"></li>
+            <li id="audio-gear-content">
+              
+            </li>
+            <li id="furniture-content">
+              
+            </li>
+            <li id="software-content">
+              
+            </li>
+            <li id="desk-setup-content">
+              
+            </li>
+            <li id="other-gear-content">
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
