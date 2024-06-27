@@ -42,7 +42,7 @@ import UsesItem from "../components/UsesItem.astro";
       <div
         x-data="{ selectedId: null, init() { this.$nextTick(() => this.select(this.$id('tab', 1))) }, select(id) { this.selectedId = id }, isSelected(id) { return this.selectedId === id }, whichChild(el, parent) { return Array.from(parent.children).indexOf(el) + 1} }"
         x-id="['tab']"
-        class="container"
+        class="container overflow-scroll"
       >
         <br />
         <!-- Tab List -->
@@ -55,7 +55,7 @@ import UsesItem from "../components/UsesItem.astro";
           @keydown.end.prevent.stop="$focus.last()"
           @keydown.page-down.prevent.stop="$focus.last()"
           role="tablist"
-          class="is-flex pb-3 justify-center flex-wrap"
+          class="is-flex pb-3 justify-center overflow-scroll"
         >
           <li>
             <button
