@@ -24,12 +24,12 @@ import UsesItem from "../components/UsesItem.astro";
     .bg-gray {
       background-color: $bg-gray;
     }
-  
+
     .highlighted-tab {
       border: 3px solid #34495e;
     }
   </style>
-  <body class="bg-gray">
+  <body class="bg-gray-100">
     <Header />
     <div class="container">
       <div class="has-text-centered">
@@ -55,7 +55,7 @@ import UsesItem from "../components/UsesItem.astro";
           @keydown.end.prevent.stop="$focus.last()"
           @keydown.page-down.prevent.stop="$focus.last()"
           role="tablist"
-          class="is-flex"
+          class="is-flex pb-3 justify-center"
         >
           <li>
             <button
@@ -154,25 +154,49 @@ import UsesItem from "../components/UsesItem.astro";
             </button>
           </li>
         </ul>
-        <div>
+        <div class="flex justify-center">
+          <section
+            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+            role="tabpanel"
+            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+          >
+            <div x-data="{ active: 1 }" class="space-y-4 max-w-xl">
+              <UsesItem
+                itemName="Lenovo Thinkpad T14 Gen 4"
+                itemDescription="Work laptop, used daily."
+                id={1}
+              />
+              <UsesItem
+                itemName="Apple M1 Pro Macbook Pro"
+                itemDescription="Personal laptop, used for things outside of work."
+                id={2}
+              />
+              <UsesItem
+                itemName="Apple Intel Mac Mini"
+                itemDescription="Used for music production."
+                id={3}
+              />
+            </div>
+          </section>
           <section
             x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
             role="tabpanel"
             :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
           >
             <UsesItem
-              itemName="Lenovo Thinkpad T14 Gen 4"
-              itemDescription="Work laptop, used daily."
+              itemName="Focusrite Scarlett 18i8 3rd Gen"
+              itemDescription="Audio interface, every instrument goes through this."
+              id={4}
             />
             <UsesItem
-              itemName="Apple M1 Pro Macbook Pro"
-              itemDescription="Personal laptop, used for things outside of work."
-              itemNumber="Two"
+              itemName="Arturia KeyLab Essential 61"
+              itemDescription="MIDI Controller, used to control a variety of software instruments."
+              id={5}
             />
             <UsesItem
-              itemName="Apple Intel Mac Mini"
-              itemDescription="Used for music production."
-              itemNumber="Three"
+              itemName="KRK Rokit 5 G4"
+              itemDescription="Studio Monitors."
+              id={6}
             />
           </section>
           <section
@@ -181,17 +205,15 @@ import UsesItem from "../components/UsesItem.astro";
             :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
           >
             <UsesItem
-                itemName="Focusrite Scarlett 18i8 3rd Gen"
-                itemDescription="Audio interface, every instrument goes through this."
-              />
-              <UsesItem
-                itemName="Arturia KeyLab Essential 61"
-                itemDescription="MIDI Controller, used to control a variety of software instruments."
-              />
-              <UsesItem
-                itemName="KRK Rokit 5 G4"
-                itemDescription="Studio Monitors."
-              />
+              itemName="Herman Miller Sayl Chair"
+              itemDescription="Fancy desk chair because I\'m kind of obsessed with ergonomics."
+              id={7}
+            />
+            <UsesItem
+              itemName="UPLIFT Standing Desk V2 Bamboo"
+              itemDesription="Fancy standing desk that I mostly sit at."
+              id={8}
+            />
           </section>
           <section
             x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
@@ -199,13 +221,30 @@ import UsesItem from "../components/UsesItem.astro";
             :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
           >
             <UsesItem
-                itemName="Herman Miller Sayl Chair"
-                itemDescription="Fancy desk chair because I\'m kind of obsessed with ergonomics."
-              />
-              <UsesItem
-                itemName="UPLIFT Standing Desk V2 Bamboo"
-                itemDesription="Fancy standing desk that I mostly sit at."
-              />
+              itemName={"Visual Studio Code"}
+              itemDescription={"Cross-platform editor that I use both on Mac OS X and Windows"}
+              id={9}
+            />
+            <UsesItem
+              itemName={"iTerm 2 (Mac OS X)"}
+              itemDescription={"Mac OS X terminal, used with Oh my zsh. I am giving a trial run to Warp currently."}
+              id={10}
+            />
+            <UsesItem
+              itemName={"Logic Pro X"}
+              itemDescription={"DAW used for all audio recording and production."}
+              id={11}
+            />
+            <UsesItem
+              itemName={"Cascadia Code"}
+              itemDescription={"Coding font from Microsoft that I use in VS Code."}
+              id={12}
+            />
+            <UsesItem
+              itemName={"Windows Terminal"}
+              itemDescription={"Terminal on Windows, used with Oh my posh"}
+              id={13}
+            />
           </section>
           <section
             x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
@@ -213,43 +252,20 @@ import UsesItem from "../components/UsesItem.astro";
             :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
           >
             <UsesItem
-                itemName={"Visual Studio Code"}
-                itemDescription={"Cross-platform editor that I use both on Mac OS X and Windows"}
-              />
-              <UsesItem
-                itemName={"iTerm 2 (Mac OS X)"}
-                itemDescription={"Mac OS X terminal, used with Oh my zsh. I am giving a trial run to Warp currently."}
-              />
-              <UsesItem
-                itemName={"Logic Pro X"}
-                itemDescription={"DAW used for all audio recording and production."}
-              />
-              <UsesItem
-                itemName={"Cascadia Code"}
-                itemDescription={"Coding font from Microsoft that I use in VS Code."}
-              />
-              <UsesItem
-                itemName={"Windows Terminal"}
-                itemDescription={"Terminal on Windows, used with Oh my posh"}
-              />
-          </section>
-          <section
-            x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
-            role="tabpanel"
-            :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
-          >
+              itemName={"Dell S2715H Monitor"}
+              itemDescription={"Vertical monitor, used at work for Teams and Outlook. Used for docs on personal projects."}
+              id={14}
+            />
             <UsesItem
-                itemName={"Dell S2715H Monitor"}
-                itemDescription={"Vertical monitor, used at work for Teams and Outlook. Used for docs on personal projects."}
-              />
-              <UsesItem
-                itemName={'LG 29" Ultrawide Monitor'}
-                itemDescription={"LG Ultrawide Monitor. Used as the primary monitor, usually split between browser and VS Code."}
-              />
-              <UsesItem
-                itemName={"Lenovo USB C Dock"}
-                itemDescription={"Everything plugs into this, including monitors, keyboard, mouse, and phone charger."}
-              />
+              itemName={'LG 29" Ultrawide Monitor'}
+              itemDescription={"LG Ultrawide Monitor. Used as the primary monitor, usually split between browser and VS Code."}
+              id={15}
+            />
+            <UsesItem
+              itemName={"Lenovo USB C Dock"}
+              itemDescription={"Everything plugs into this, including monitors, keyboard, mouse, and phone charger."}
+              id={16}
+            />
           </section>
           <section
             x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
@@ -257,44 +273,11 @@ import UsesItem from "../components/UsesItem.astro";
             :aria-labeleldby="$id('tab', whichChild($el, $el.parentElement))"
           >
             <UsesItem
-                itemName={"Topo Designs Rover Pack"}
-                itemDescription={"Backpack that goes most everywhere with me. I actually don't like it all that much. I am open to backpack suggestions."}
-                itemNumber="Seventeen"
-              />
+              itemName={"Topo Designs Rover Pack"}
+              itemDescription={"Backpack that goes most everywhere with me. I actually don't like it all that much. I am open to backpack suggestions."}
+              id={17}
+            />
           </section>
-        </div>
-        <!-- Panels -->
-      </div>
-      <div class="tabs-wrapper">
-        <div class="tabs">
-          <ul>
-            <li class="is-active" id="hardware-tab"><a>Hardware</a></li>
-            <li id="audio-gear-tab"><a>Audio Gear</a></li>
-            <li id="furniture-tab"><a>Furniture</a></li>
-            <li id="software-tab"><a>Software</a></li>
-            <li id="desk-setup-tab"><a>Desk Setup</a></li>
-            <li id="other-gear-tab"><a>Other Gear</a></li>
-          </ul>
-        </div>
-        <div class="tabs-content">
-          <ul>
-            <li class="is-active" id="hardware-content"></li>
-            <li id="audio-gear-content">
-              
-            </li>
-            <li id="furniture-content">
-              
-            </li>
-            <li id="software-content">
-              
-            </li>
-            <li id="desk-setup-content">
-              
-            </li>
-            <li id="other-gear-content">
-              
-            </li>
-          </ul>
         </div>
       </div>
     </div>

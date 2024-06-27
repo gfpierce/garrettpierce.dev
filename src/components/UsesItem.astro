@@ -1,10 +1,8 @@
 ---
-const { itemDescription, itemName } = Astro.props;
+const { itemDescription, itemName, id } = Astro.props;
+import Accordion from "./Accordion.astro";
 ---
-
-<h1>{itemName}</h1>
-<p>{itemDescription}</p>
-
-<div x-data>
-
+<div>
+    <Accordion accordionHeading={itemName} accordionText={itemDescription} accordionId={id}/>
 </div>
+
