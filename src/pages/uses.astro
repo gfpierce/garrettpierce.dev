@@ -29,10 +29,10 @@ import UsesItem from "../components/UsesItem.astro";
       border: 3px solid #34495e;
     }
   </style>
-  <body class="bg-gray-100">
+  <body class="bg-themeGray-100">
     <Header />
     <div class="container">
-      <div class="has-text-centered">
+      <div class="has-text-centered pt-4">
         <p>
           Inspired by Wes Bos and <a href="https://uses.tech" target="_blank"
             >uses.tech</a
@@ -55,7 +55,7 @@ import UsesItem from "../components/UsesItem.astro";
           @keydown.end.prevent.stop="$focus.last()"
           @keydown.page-down.prevent.stop="$focus.last()"
           role="tablist"
-          class="is-flex pb-3 justify-center"
+          class="is-flex pb-3 justify-center flex-wrap"
         >
           <li>
             <button
@@ -68,7 +68,7 @@ import UsesItem from "../components/UsesItem.astro";
               :aria-selected="isSelected($el.id)"
               :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
               role="tab"
-              class="button is-inline-flex"
+              class="button is-inline-flex text-wrap"
             >
               Hardware
             </button>
@@ -84,7 +84,7 @@ import UsesItem from "../components/UsesItem.astro";
               :aria-selected="isSelected($el.id)"
               :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
               role="tab"
-              class="button is-inline-flex"
+              class="button is-inline-flex text-wrap"
             >
               Audio Gear
             </button>
@@ -100,7 +100,7 @@ import UsesItem from "../components/UsesItem.astro";
               :aria-selected="isSelected($el.id)"
               :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
               role="tab"
-              class="button is-inline-flex"
+              class="button is-inline-flex text-wrap"
             >
               Furniture
             </button>
@@ -116,7 +116,7 @@ import UsesItem from "../components/UsesItem.astro";
               :aria-selected="isSelected($el.id)"
               :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
               role="tab"
-              class="button is-inline-flex"
+              class="button is-inline-flex text-wrap"
             >
               Software
             </button>
@@ -132,7 +132,7 @@ import UsesItem from "../components/UsesItem.astro";
               :aria-selected="isSelected($el.id)"
               :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
               role="tab"
-              class="button is-inline-flex"
+              class="button is-inline-flex text-wrap"
             >
               Desk Setup
             </button>
@@ -148,7 +148,7 @@ import UsesItem from "../components/UsesItem.astro";
               :aria-selected="isSelected($el.id)"
               :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
               role="tab"
-              class="button is-inline-flex"
+              class="button is-inline-flex text-wrap"
             >
               Other Gear
             </button>

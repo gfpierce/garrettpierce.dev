@@ -1,0 +1,56 @@
+---
+import Header from "../components/Header.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Uses</title>
+  </head>
+  <body class="bg-themeGray-100">
+    <Header />
+    <div class="container">
+        <div class="bg-themeBlack text-white py-4">
+            Black: #34495e
+        </div>
+        <div class="bg-themeGray-100 py-4">
+            Gray100: #ecf0f1
+        </div>
+        <div class="bg-themeGray-300 py-4">
+            Gray300: #bdc3c7
+        </div>
+        <div class="bg-themeGray-500 py-4">
+            Gray500: #95a5a6
+        </div>
+        <div class="bg-themeGray-700 py-4">
+            Gray700: #7f8c8d
+        </div>
+        <div class="bg-themeBlue py-4">
+            Blue: #3498db
+        </div>
+        <div class="bg-themeTeal py-4">
+            Teal: #1abc9c
+        </div>
+        <div class="bg-themeGreen py-4">
+            Green: #2ecc71
+        </div>
+        <div class="bg-themeRed py-4">
+            Red: #e74c3c
+        </div>
+        <div class="bg-themeYellow py-4">
+            Yellow: #f1c40f
+        </div>
+        <div class="py-4">
+            <a href="https://flatuicolors.com/palette/defo">Color Reference (link)</a>
+        </div>
+    </div>
+  </body>
+  </html>
