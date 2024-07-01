@@ -1,0 +1,47 @@
+---
+import NavMenu from "./NavMenu.astro";
+---
+<style>
+    .navbar-corner-rounded {
+        border-radius: 5rem;
+        background-color: transparent;
+        border: 5px solid #3b5369;
+    }
+    .floating-menu-container {
+        position: absolute;
+    }
+    .floating-menu {
+        width: 4rem;
+        height: 4rem;
+    }
+    .menu-icon {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<div class="floating-menu-container top-3/4 right-8">
+    <div class="dropdown dropdown-end dropdown-top navbar-corner-rounded floating-menu">
+        <div tabindex="0" role="button" class="btn btn-ghost menu-icon">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 menu-icon"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#3b5369"
+            >
+                <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h8m-8 6h16"></path>
+            </svg>
+        </div>
+        <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow nav-text"
+        >
+            <NavMenu />
+        </ul>
+    </div>
+</div>

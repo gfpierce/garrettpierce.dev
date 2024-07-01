@@ -11,38 +11,37 @@ import NavMenu from "./NavMenu.astro";
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<style></style>
-<body>
-  <div class="navbar bg-themeTeal">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h8m-8 6h16"></path>
-          </svg>
-        </div>
-        <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content bg-themeTeal rounded-box z-[1] mt-3 w-52 p-2 shadow"
-        >
-          <NavMenu />
-        </ul>
-      </div>
+<style>
 
+  .navbar-corner-sharp {
+    background: linear-gradient(315deg, transparent 10px, transparent 10px);
+    background-position: bottom right;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    border: 3px solid #3b5369;
+  }
+
+  .navbar-corner-rounded {
+    border-radius: 5rem;
+    background-color: transparent;
+    border: 5px solid #3b5369;
+  }
+
+  .nav-text {
+    color: #3b5369;
+  }
+
+
+
+</style>
+<body>
+  <div class="navbar navbar-corner-rounded">
+    <div class="navbar-start">
       <span
         class="text-2xl align-middle p-2 font-semibold whitespace-nowrap dark:text-white"
         >Garrett Pierce</span
       >
+      <Image src={logoForHeader} class="h-12 max-w-12" alt="Logo" />
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
@@ -50,7 +49,31 @@ import NavMenu from "./NavMenu.astro";
       </ul>
     </div>
     <div class="navbar-end">
-      <Image src={logoForHeader} class="h-12 max-w-12" alt="Logo" />
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="#3b5369"
+          >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"></path>
+          </svg>
+        </div>
+        <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow nav-text"
+        >
+          <NavMenu />
+        </ul>
+      </div>
+
     </div>
   </div>
+
 </body>
