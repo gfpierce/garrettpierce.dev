@@ -1,6 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import FloatingMenu from "../components/FloatingMenu.astro";
+import StageImg from "../images/stage.jpg";
+import { Image } from "astro:assets";
 
 ---
 <!doctype html>
@@ -8,14 +10,26 @@ import FloatingMenu from "../components/FloatingMenu.astro";
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
   <body class="bg-themeGray-100">
     <Header />
-    <h1>Astro</h1>
+
+    <div class="hero min-h-screen py-3">
+      <Image src={StageImg} alt="Image of Pritzker Pavilion in Chicago"/>
+      <div class="hero-overlay bg-opacity-60"></div>
+      <div class="hero-content text-neutral-content text-center">
+        <div class="max-w-md">
+          <h1 class="mb-5 text-5xl font-extrabold text-themeGray-300">Hey.</h1>
+          <p class="mb-5 font-semibold text-lg text-themeGray-300">
+            I'm Garrett. I'm a developer, musician, and photographer from Virginia.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <FloatingMenu />
   </body>
 </html>

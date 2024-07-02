@@ -3,19 +3,22 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			backgroundImage: {
+				'hero-image': 'url(./src/images/stage.jpg)'
+			},
 			colors: {
-				themeBlack: '#34495e',
+				themeBlack: '#3b5369',
 				themeGray: {
-					100: '#ecf0f1',
-					300: '#bdc3c7',
-					500: '#95a5a6',
-					700: '#7f8c8d'
+					100: '#eef1f2',
+					300: '#c4c9cd',
+					500: '#9eadae',
+					700: '#899697'
 				},
-				themeBlue: '#3498db',
-				themeTeal: '#1abc9c',
-				themeGreen: '#2ecc71',
-				themeRed: '#e74c3c',
-				themeYellow: '#f1c40f'
+				themeBlue: '#3ba1df',
+				themeTeal: '#1cc3a5',
+				themeGreen: '#34d17c',
+				themeRed: '#e95644',
+				themeYellow: '#f2ca0d'
 			}
 		},
 		
