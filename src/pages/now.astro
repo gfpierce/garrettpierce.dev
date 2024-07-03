@@ -1,0 +1,26 @@
+---
+
+import Header from "../components/Header.astro";
+import FloatingMenu from "../components/FloatingMenu.astro";
+import Footer from "../components/Footer.astro";---
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+</head>
+<body class="bg-themeGray-100">
+    <Header />
+    <div class="flex justify-center">
+        <div class="lg:max-w-xl">
+            <h1 class="mb-5 text-5xl font-extrabold text-themeBlack text-center py-3 ">Now</h1>
+            <p class="mb-5 font-semibold text-lg text-themeGray-700 text-center">
+                I don't remember where I first saw it, but someone out there on the internet had a page for what they're currently working on, called the Now page.
+            </p>
+        </div>
+    </div>
+    <FloatingMenu />
+    <Footer />
+</body>
