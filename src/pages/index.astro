@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import FloatingMenu from "../components/FloatingMenu.astro";
 import StageImg from "../images/stage.jpg";
 import { Image } from "astro:assets";
+import Footer from "../components/Footer.astro";
 
 ---
 <!doctype html>
@@ -29,7 +30,11 @@ import { Image } from "astro:assets";
         </div>
       </div>
     </div>
+    <div class="text-center bg-themeGray-100 pb-3">
+      <h2 class="text-2xl font-extrabold text-themeGray-700">What will we create together?</h2>
+    </div>
 
     <FloatingMenu />
+  <Footer />
   </body>
 </html>

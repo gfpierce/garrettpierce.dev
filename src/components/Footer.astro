@@ -1,0 +1,30 @@
+---
+import logoForHeader from "../images/landscape-placeholder.svg";
+import { Image } from "astro:assets";
+---
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<style>
+
+</style>
+<body>
+<div class="footer text-base-content bg-themeBlack p-10">
+    <aside>
+        <Image src={logoForHeader} class="h-12 max-w-12" alt="Logo" />
+        <p>
+            Garrett Pierce
+            <br />
+            Purveyor of good stuff since 1992
+        </p>
+    </aside>
+    <nav>
+        <h6 class="footer-title">Links</h6>
+        <a class="link link-hover" href="https://www.instagram.com/bear.photo/">Instagram</a>
+        <a class="link link-hover" href="https://www.linkedin.com/in/gfpierce/">LinkedIn</a>
+        <a class="link link-hover" href="https://www.flickr.com/photos/garebear22/albums/">Flickr</a>
+        <a class="link link-hover" href="https://github.com/gfpierce">GitHub</a>
+    </nav>
+</div>
+</body>
