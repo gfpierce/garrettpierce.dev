@@ -86,7 +86,7 @@ import UsesItem from "../components/UsesItem.astro";
               role="tab"
               class="button is-inline-flex text-wrap"
             >
-              Audio Gear
+              Music Gear
             </button>
           </li>
           <li>
@@ -153,6 +153,22 @@ import UsesItem from "../components/UsesItem.astro";
               Other Gear
             </button>
           </li>
+          <li>
+            <button
+                :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+                @click="select($el.id)"
+                @mousedown.prevent
+                @focus="select($el.id)"
+                type="button"
+                :tabindex="isSelected($el.id) ? 0 : -1"
+                :aria-selected="isSelected($el.id)"
+                :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
+                role="tab"
+                class="button is-inline-flex text-wrap"
+            >
+              Fitness Gear
+            </button>
+          </li>
         </ul>
         <div class="flex justify-center">
           <section
@@ -198,6 +214,11 @@ import UsesItem from "../components/UsesItem.astro";
               itemDescription="Studio Monitors."
               id={6}
             />
+            <UsesItem
+              itemName={"Various Guitars"}
+              itemDescription="A Gibson SG, Warmoth Jazzmaster/Telecaster hybrid, a limited edition Taylor 514, a Fender Player P Bass, and a 90s Fender Telecaster."
+              id={22}
+            />
           </section>
           <section
             x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
@@ -222,8 +243,13 @@ import UsesItem from "../components/UsesItem.astro";
           >
             <UsesItem
               itemName={"Visual Studio Code"}
-              itemDescription={"Cross-platform editor that I use both on Mac OS X and Windows"}
+              itemDescription={"Cross-platform editor that I use both on Mac OS X and Windows."}
               id={9}
+            />
+            <UsesItem
+              itemName={"JetBrains WebStorm"}
+              itemDescription={"Giving this a try for a few months as of July 2024. Really liking it so far!"}
+              id={18}
             />
             <UsesItem
               itemName={"iTerm 2 (Mac OS X)"}
@@ -273,9 +299,30 @@ import UsesItem from "../components/UsesItem.astro";
             :aria-labeleldby="$id('tab', whichChild($el, $el.parentElement))"
           >
             <UsesItem
-              itemName={"Topo Designs Rover Pack"}
-              itemDescription={"Backpack that goes most everywhere with me. I actually don't like it all that much. I am open to backpack suggestions."}
+              itemName={"North Face Recon Backpack"}
+              itemDescription={"Backpack that goes most everywhere with me."}
               id={17}
+            />
+          </section>
+          <section
+              x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+              role="tabpanel"
+              :aria-labeleldby="$id('tab', whichChild($el, $el.parentElement))"
+          >
+            <UsesItem
+              itemName={"Altra Lone Peak 8"}
+              itemDescription={"Primary trail running/travel shoe. Love these!"}
+              id={19}
+            />
+            <UsesItem
+              itemName={"New Balance 1080v13"}
+              itemDescription={"Primary road running shoe. Actually not in love with these, trying a pair of Altra Torin 7s as of July 2024."}
+              id={20}
+            />
+            <UsesItem
+              itemName={"Trek Roscoe 7"}
+              itemDescription={"Hardtail mountain bike for the shredz 🤙"}
+              id={21}
             />
           </section>
         </div>
