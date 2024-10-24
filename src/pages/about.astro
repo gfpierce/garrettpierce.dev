@@ -1,0 +1,21 @@
+---
+import Header from "../components/Header.astro";
+import FloatingMenu from "../components/FloatingMenu.astro";
+import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle="About"
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <div class="text-center bg-themeGray-100 pb-3">
+        <h2 class="text-2xl font-extrabold text-themeGray-700 pb-3">
+          Who is Garrett Pierce?
+        </h2>
+        <p class="pb-3 font-normal text-lg text-themeGray-700">
+          I'm a developer, musician, mountain biker, runner, and photographer.
+        </p>
+        <p class="pb-3 font-normal text-lg text-themeGray-700">
+          I'm a Virginia boy at heart, but currently living in Maryland.
+        </p>
+      </div>
+</BaseLayout>

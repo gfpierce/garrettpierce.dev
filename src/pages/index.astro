@@ -4,6 +4,7 @@ import FloatingMenu from "../components/FloatingMenu.astro";
 import StageImg from "../images/stage.jpg";
 import { Image } from "astro:assets";
 import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
 
 ---
 <!doctype html>
@@ -25,13 +26,14 @@ import Footer from "../components/Footer.astro";
         <div class="max-w-md">
           <h1 class="mb-5 text-5xl font-extrabold text-themeGray-300">Hey.</h1>
           <p class="mb-5 font-semibold text-lg text-themeGray-300">
-            I'm Garrett. I'm a developer, musician, mountain biker, runner, and photographer from Virginia.
+            I'm Garrett. I'm a developer, musician, mountain biker, runner, and photographer.
           </p>
         </div>
       </div>
     </div>
     <div class="text-center bg-themeGray-100 pb-3">
-      <h2 class="text-2xl font-extrabold text-themeGray-700">What will we create together?</h2>
+      <h2 class="text-2xl font-extrabold text-themeGray-700 pb-3">What will we create together?</h2>
+      <ContactForm />
     </div>
 
     <FloatingMenu />

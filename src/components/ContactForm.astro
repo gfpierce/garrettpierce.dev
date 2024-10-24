@@ -1,0 +1,43 @@
+---
+
+---
+
+<div class="justify-items-center grid">
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <!-- Replace with your Access Key -->
+    <input
+      type="hidden"
+      name="access_key"
+      value="3d67e7a8-b917-4882-8b3a-125cf8f3c7e7"
+    />
+
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+    <div class="grid pl-3 max-w-xl items-center">
+      <div class="pb-3 grid">
+        <label for="name" class="px-3 text-left">Name</label>
+        <input type="text" name="name" required class="input" />
+      </div>
+      <div class="pb-3 grid">
+        <label for="email" class="px-3 text-left">Email</label>
+        <input type="email" name="email" required class="input" />
+      </div>
+      <div class="pb-3 grid">
+        <label for="message" class="px-3 text-left">Message</label>
+        <textarea name="message" required class="textarea h-24"/>
+      </div>
+    </div>
+
+    <!-- Honeypot Spam Protection -->
+    <input
+      type="checkbox"
+      name="botcheck"
+      class="hidden"
+      style="display: none;"
+    />
+
+    <!-- Custom Confirmation / Success Page -->
+    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+    <button type="submit">Submit Form</button>
+  </form>
+</div>

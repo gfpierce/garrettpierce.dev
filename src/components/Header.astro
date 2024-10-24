@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { siteTitleConfig } from "../../config.astro";
 const siteTitle = siteTitleConfig;
 const id = "siteHeader";
-import logoForHeader from "../images/landscape-placeholder.svg";
+import logoForHeader from "../images/GP-_logomark-01.svg";
 import NavMenu from "./NavMenu.astro";
 ---
 
@@ -32,10 +32,10 @@ import NavMenu from "./NavMenu.astro";
   <div class="navbar navbar-corner-rounded">
     <div class="navbar-start">
       <span
-        class="text-2xl align-middle p-2 font-semibold whitespace-nowrap dark:text-white"
+        class="text-2xl align-middle p-2 font-semibold whitespace-nowrap text-themeBlack"
         >Garrett Pierce</span
       >
-      <Image src={logoForHeader} class="h-12 max-w-12" alt="Logo" />
+      <Image src={logoForHeader} class="max-h-12 max-w-20" alt="Logo" />
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
