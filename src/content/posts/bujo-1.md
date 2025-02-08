@@ -1,6 +1,6 @@
 ---
 title: 'Bullet Journaling and Mental Health'
-pubDate: 2025-2-7
+pubDate: 2025-02-07
 description: 'Initial thoughts on bullet journaling'
 author: 'Garrett Pierce'
 tags: [ "blogging", "bullet journaling", "mental health"]
