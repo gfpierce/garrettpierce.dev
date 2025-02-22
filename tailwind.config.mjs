@@ -12,7 +12,8 @@ export default {
 					100: '#eef1f2',
 					300: '#c4c9cd',
 					500: '#9eadae',
-					700: '#899697'
+					700: '#899697',
+					800: '#5F7384',
 				},
 				themeBlue: '#3ba1df',
 				themeTeal: '#1cc3a5',
