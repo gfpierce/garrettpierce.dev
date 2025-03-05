@@ -12,8 +12,8 @@ const pageTitle = "Writing";
   <ul>
     {
       allPosts.map((post) => (
-        <li class="pb-3">
-        <a class="text-themeGray-800" href={`/posts/${post.slug}/`}>{post.data.title} ({post.data.pubDate.toString().slice(0, 10)})</a>
+        <li class="pb-8">
+        <a class="text-themeGray-800 text-xl" href={`/posts/${post.slug}/`}>{post.data.title} ({post.data.pubDate.toString().slice(0, 10)})</a>
         </li>
       ))
     }
