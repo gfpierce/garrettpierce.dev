@@ -1,0 +1,40 @@
+---
+title: 'Iceland Blog - Day 3'
+pubDate: 2025-06-22
+description: 'Thoughts and updates from our third day in Iceland!'
+author: 'Garrett Pierce'
+tags: [ "iceland" ]
+image: {
+    url: "",
+    alt: ""
+}
+---
+
+# Day 3 (June 22, 2025)
+Today got off to a bit of a slow start, which was kind of needed. We woke up a little late and managed to get a quick round of laundry in before leaving Midgard Base Camp. We hit the road a little after 10am and went off to Seljalandsfoss.
+
+Seljalandsfoss was a huge waterfall that the land had been carved out in such a way that you could walk up behind it. It was here I discovered that my REI jacket was not as waterproof as I thought, which was a bad time to learn that fact! I got some amazing pictures in though, and we saw three other waterfalls of varying sizes along the same path. We continued on to see a couple other small things on our way to Skogafoss, including a few huts that used to be someone’s dwelling, and a smaller waterfall that was well off the beaten path.
+
+We finally got to Skogafoss a little while later, which was quite a sight to see. The big fall you see at first is kind of the end of the Skoga river. The fall itself is about 200 feet tall, and there’s a hiking path that takes you up to the top over a pretty short distance. A true stairmaster experience, but entirely outside. The trail continued on past the waterfall and up the river, where you could see several more waterfalls that preceded Skogafoss itself, each incredible in their own way. We eventually felt we saw all there was to see at this location, and went to continue on. 
+
+It had been really sunny up to that point in the day, which was not normal for our experience so far, and sure enough, it started raining shortly after we left Skogafoss. We continued on to the town of Vik, where our first stop was Skool Beans, a little coffee shop that sits entirely inside a school bus. I’m talking the classic yellow type of school bus you remember from childhood, converted into a functioning coffee shop. Really cool concept. They are known for their creative spins on hot chocolates and interesting lattes. We got a mocha and pumpkin spice latte, both of which came with delicious whipped cream on top and a few giant marshmallows. We enjoyed it.
+
+After Skool Beans, we continued over to Black Crust Pizzeria, a unique pizza spot in Vik, known for their pizzas that do indeed come with a black crust. The black crust is not just because they burn their pizzas, they actually bake them quite well, and they offer a certain set of pizzas that come on a dough produced from their sourdough starter, which was actually our preference. The black crust comes from the addition of activated charcoal in the dough, and is meant to remind the eater of the famous black sand beaches of Iceland. Pretty cool! We enjoyed the pizza (from the car because they were too busy inside to seat us), and listened to a podcast about geology.
+
+On the note of the geology podcast, we’ve actually been listening to ([PlanetGeo Podcast](https://planetgeocast.com/)), which has been a lot of fun. It’s produced by two guys who are both educators in the field of geology, and we were first turned on to them from their episode on the uniqueness of Iceland, which we found by simply searching Spotify for podcasts about Iceland. 
+
+Podcasts have been a good way to fill the time while driving, which there is certainly no shortage of when you’re traveling in Iceland. Sofie and I have been living together for about 9 months now, and we both work from home most days, so we don’t have a ton of new things to talk about, especially when we’ve been on a trip together the past few days, sharing every experience. So we’ve enjoyed having podcasts on in the car to pass the time while driving.
+
+We stopped briefly at Kronan, another budget grocery store chain in Iceland, similar to Bonus. We were mainly stocking up on supplies to take with us on our long day tomorrow, where (sneak peek alert) we are doing a glacier hike and kayaking day, followed by a four hour drive up the eastern coast of Iceland. There’s not a ton of places along the eastern coast of Iceland for whatever reason, so we opted to just kind of get all that done in one day and move on to the north, where there is much more to do.
+
+Along the way to our next destination, we had our first meaningful encounter with Iceland’s famed sheep population. If you haven’t heared before, Iceland is known for their sheep, to such a degree that car rental companies operating in Iceland supposedly offer a sheep insurance when renting a car (although ours did not come with such an option). I’ve heard from a few people that it’s not impossible that you’ll hit a sheep while driving along the Ring Road, and promptly be accosted by a farmer demanding financial compensation for you hitting their sheep. This is where the sheep insurance comes in.
+
+All that said, we have seen a ton of sheep so far in Iceland, some quite close to the road, but up until this point, none actually on the road. That changed today, as we were driving along from Vik, we saw an older sheep flanked by two younger sheep standing in the middle of our lane, staring at us with a sort of “what are you gonna do about it” vibe. I rolled down the window and said something to the effect of “hey guys? We’d like to sneak by you if we could.” They weren’t terribly interested in obliging my request, and took their sweet time crossing and ultimately getting off the road. Typically I’m fine with letting pedestrians cross, especially so when it’s raining, but these guys were a little ridiculous about it.
+
+Shortly after our sheep encounter, we entered the Eldhraun lava field. It’s (thankfully) not a field of actively flowing lava, but instead a large area of rock created by a volcanic eruption in the late 1700s. The rock formations are unlike anything I’ve seen before, due to the wild ways that cooled lava can take shape, but even more interesting is the way that the rock has become completely covered in moss. The moss gives the area an interesting uniform green color, and try as I might, I’ll fail to describe it well with only words. You have to see it to believe it, and even the best photos can’t capture how amazing it is up close.
+
+Our final activity of the day was Fjaðrárgljúfur. I never learned how to pronounce it. Apparently it’s difficult even for native Icelandic speakers to pronounce, so I figured I was doomed on that one. Anyway, Fjaðrárgljúfur is a canyon that was carved out by the Fjaðrá (again, no idea) river, and first received widespread exposure as part of the music video for Justin Bieber’s “I’ll Show You” (Sofie and I are listening to it in the hotel room as I’m writing this, kind of a bop?) The canyon has a really unique serpentine shape to it, and truly defies verbal description. So much of what I’ve been seeing has to be seen to be believed, and even if you can see it through photos, it doesn’t capture the fullness of experiencing it in person. It’s truly incredible. This was also another instance of Iceland having really good infrastructure around their natural attractions, with nicely maintained trails, and some really nice overlooks that offer breathtaking views. 
+
+After we finished up at whatever it’s called (I truly don’t feel like copying and pasting again), we headed to our accomodations for the night, which was only about 15 minutes away from the canyon. We stopped on our way into town to get gas, my first time pumping gas in a foreign country! I definitely did not understand things such as the pump offering you a maximum money limit, and was worried it wouldn’t sense when the tank was almost full and stop pumping like they do in the states, but it all worked out okay. We went and settled in at our lodging for tonight, Klausturhof Guesthouse. It’s a cute cluster of buildings adjacent to a little waterfall, with rooms that are fairly minimal and small, but enough for a young couple just passing through.
+
+Thanks for reading!
