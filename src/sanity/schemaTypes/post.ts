@@ -49,6 +49,10 @@ export const postType = defineType({
       name: "body",
       type: "blockContent",
     }),
+    defineField({
+      name: "description",
+      type: "string",
+    })
   ],
 
   preview: {
