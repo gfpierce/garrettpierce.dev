@@ -1,0 +1,51 @@
+---
+// ./src/pages/post/[slug].astro
+import type { SanityDocument } from "@sanity/client";
+import { loadQuery } from "../../sanity/lib/load-query";
+import PortableText from "../../components/PortableText.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const { data: posts } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "post"]`,
+  });
+
+  return posts.map(({ slug }) => {
+    return {
+      params: {
+        slug: slug.current,
+      },
+    };
+  });
+}
+
+const { params } = Astro;
+
+const { data: post } = await loadQuery({
+  query: `*[_type == "post" && slug.current == $slug][0] {
+    title,
+    slug,
+    publishedAt,
+    body,
+    description,
+    author->{
+      name
+    }
+  }`,
+  params,
+});
+---
+
+<BaseLayout pageTitle={post.title}>
+  <h1 class="text-themeGray-800">{post.title}</h1>
+  <p class="pb-3 font-normal text-lg text-themeGray-800">
+    {new Date(post.publishedAt).toDateString()}
+  </p>
+  <p class="pb-3 font-normal text-lg text-themeGray-800">
+    <em>{post.description}</em>
+  </p>
+  <p class="pb-3 font-normal text-lg text-themeGray-800">
+    Written by: {post.author.name}
+  </p>
+  <PortableText portableText={post.body} />
+</BaseLayout>

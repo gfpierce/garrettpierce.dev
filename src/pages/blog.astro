@@ -1,8 +1,15 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const allPosts = await getCollection("posts");
+import { loadQuery } from "../sanity/lib/load-query";
+import type { SanityDocument } from "@sanity/client";
+//const allPosts = await getCollection("posts");
 const pageTitle = "Writing";
+
+const { data: allPosts } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "post"]`,
+  });
+allPosts.sort((a, b) => new Date(a.publishedAt) - new Date(b.publishedAt));
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -13,7 +20,7 @@ const pageTitle = "Writing";
     {
       allPosts.map((post) => (
         <li class="pb-8">
-        <a class="text-themeGray-800 text-xl" href={`/posts/${post.slug}/`}>{post.data.title} ({post.data.pubDate.toString().slice(0, 10)})</a>
+        <a class="text-themeGray-800 text-xl" href={`/post/${post.slug.current}/`}>{post.title} ({new Date(post.publishedAt).toDateString()})</a>
         </li>
       ))
     }
