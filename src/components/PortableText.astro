@@ -1,6 +1,6 @@
 ---
 // ./src/components/PortableText.astro
-import { PortableText as PortableTextInternal } from 'astro-portabletext';
+import { PortableText as PortableTextInternal } from "astro-portabletext";
 import PortableTextImage from "./PortableTextImage.astro";
 
 const { portableText } = Astro.props;
@@ -8,9 +8,12 @@ const { portableText } = Astro.props;
 const components = {
   type: {
     image: PortableTextImage,
-  }
+  },
 };
 ---
 
-<PortableTextInternal value={portableText} components={components} />
-
+<div
+  class="prose p-4 text-themeGray-800 prose-h1:text-themeBlack prose-h2:text-themeBlack prose-h3:text-themeBlack prose-h4:text-themeBlack prose-h5:text-themeBlack prose-h6:text-themeBlack prose-p:text-themeGray-800 prose-a:text-themeTeal hover:prose-a:text-themeBlue"
+>
+  <PortableTextInternal value={portableText} components={components} />
+</div>

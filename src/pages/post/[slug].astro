@@ -39,7 +39,7 @@ const { data: post } = await loadQuery({
 <BaseLayout pageTitle={post.title}>
   <h1 class="text-themeGray-800">{post.title}</h1>
   <p class="pb-3 font-normal text-lg text-themeGray-800">
-    {post.publishedAt.toString().slice(0, 10)}
+    {new Date(post.publishedAt).toDateString()}
   </p>
   <p class="pb-3 font-normal text-lg text-themeGray-800">
     <em>{post.description}</em>
