@@ -21,7 +21,7 @@ export const galleryType = defineType({
     },
     {
         name: 'display',
-        type: 'string'
+        type: 'string',
         title: 'Display as',
         description: 'How should we display these images?',
         options: {
