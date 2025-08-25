@@ -2,48 +2,65 @@ import { defineField, defineType } from "sanity";
 
 export const galleryType = defineType({
   name: "gallery",
-  type: "object",
+  type: "document",
   title: "Gallery",
   fields: [
-    {
+    defineField({
       name: "images",
       type: "array",
       title: "Images",
       of: [
         {
-          type: "reference",
-          to: { type: "image" },
+          name: "image",
+          type: "image",
+          title: "Image",
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            defineField({
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+            }),
+          ],
         },
       ],
       options: {
-        layout: 'grid'
-      }
-    },
-    {
-        name: 'display',
-        type: 'string',
-        title: 'Display as',
-        description: 'How should we display these images?',
-        options: {
-        list: [
-          { title: 'Stacked on top of eachother', value: 'stacked' },
-          { title: 'In-line', value: 'inline' },
-          { title: 'Carousel', value: 'carousel' },
-        ],
-        layout: 'radio', // <-- defaults to 'dropdown'
+        layout: "grid",
       },
-    },
-    {
-      name: 'zoom',
-      type: 'boolean',
-      title: 'Zoom enabled',
-      description: 'Should we enable zooming of images?',
-    },
+    }),
+    defineField({
+      name: "display",
+      type: "string",
+      title: "Display as",
+      description: "How should we display these images?",
+      options: {
+        list: [
+          { title: "Stacked on top of eachother", value: "stacked" },
+          { title: "In-line", value: "inline" },
+          { title: "Carousel", value: "carousel" },
+        ],
+        layout: "radio", // <-- defaults to 'dropdown'
+      },
+    }),
+    defineField({
+      name: "zoom",
+      type: "boolean",
+      title: "Zoom enabled",
+      description: "Should we enable zooming of images?",
+    }),
+    defineField({
+      name: "leadImage",
+      type: "image",
+      title: "Lead image",
+      description: "Image for gallery thumbnail",
+    })
   ],
   preview: {
     select: {
-      images: 'images',
-      image: 'images.0',
+      images: "images",
+      image: "images.0",
     },
     prepare(selection) {
       const { images, image } = selection;
