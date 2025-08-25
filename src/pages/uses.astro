@@ -40,7 +40,7 @@ import Footer from "../components/Footer.astro";
         <p class="text-themeGray-800">
             Inspired by Wes Bos and <a href="https://uses.tech" target="_blank"
         >uses.tech</a
-        >, this is my /uses page.
+        >, this is my /uses page. Last updated 8/25/2025.
         </p>
     </div>
     <div
@@ -173,6 +173,22 @@ import Footer from "../components/Footer.astro";
                     Other Gear
                 </button>
             </li>
+            <li>
+                <button
+                        :id="$id('tab', whichChild($el.parentElement, $refs.tablist))"
+                        @click="select($el.id)"
+                        @mousedown.prevent
+                        @focus="select($el.id)"
+                        type="button"
+                        :tabindex="isSelected($el.id) ? 0 : -1"
+                        :aria-selected="isSelected($el.id)"
+                        :class="isSelected($el.id) ? 'highlighted-tab' : 'border-transparent'"
+                        role="tab"
+                        class="button is-inline-flex text-wrap text-themeGray-800"
+                >
+                    Photography Equipment
+                </button>
+            </li>
         </ul>
         <div class="flex justify-center">
             <section
@@ -260,13 +276,8 @@ import Footer from "../components/Footer.astro";
                             id={9}
                     />
                     <UsesItem
-                            itemName={"JetBrains WebStorm"}
-                            itemDescription={"Giving this a try for a few months as of July 2024. Really liking it so far!"}
-                            id={18}
-                    />
-                    <UsesItem
-                            itemName={"iTerm 2 (Mac OS X)"}
-                            itemDescription={"Mac OS X terminal, used with Oh my zsh. I am giving a trial run to Warp currently."}
+                            itemName={"Warp Terminal"}
+                            itemDescription={"Mac OS X terminal, used with Oh my zsh."}
                             id={10}
                     />
                     <UsesItem
@@ -319,13 +330,13 @@ import Footer from "../components/Footer.astro";
             >
                 <div class="space-y-4 w-full">
                     <UsesItem
-                            itemName={"Altra Lone Peak 8"}
-                            itemDescription={"Primary trail running/travel shoe. Love these!"}
+                            itemName={"New Balance Fresh Foam Hierro v9"}
+                            itemDescription={"Primary trail running shoe. Love these!"}
                             id={19}
                     />
                     <UsesItem
-                            itemName={"New Balance 880v14"}
-                            itemDescription={"Primary road running shoe as of October 2024."}
+                            itemName={"Asics Superblast 2"}
+                            itemDescription={"Primary road running shoe as of May 2025. These are crazy comfortable."}
                             id={20}
                     />
                     <UsesItem
@@ -350,6 +361,45 @@ import Footer from "../components/Footer.astro";
                     />
                 </div>
 
+            </section>
+            <section
+                    x-show="isSelected($id('tab', whichChild($el, $el.parentElement)))"
+                    role="tabpanel"
+                    :aria-labelledby="$id('tab', whichChild($el, $el.parentElement))"
+                    class="w-10/12 lg:w-2/3 xl:w-2/3"
+            >
+                <div class="space-y-4 w-full">
+                    <UsesItem
+                            itemName="Nikon D700"
+                            itemDescription="Bought used from MPB in July 2025. Love this one, it's my first full-frame DSLR."
+                            id={22}
+                    />
+                    <UsesItem
+                            itemName="Nikon D90"
+                            itemDescription="Have had this one since I got my start shooting for the high school yearbook in 2010. It's more or less retired as of August 2025, but may make an appearance from time to time."
+                            id={23}
+                    />
+                    <UsesItem
+                            itemName="Assorted Nikon Lenses"
+                            itemDescription="My lens kit at this point consists of entirely prime lenses from Nikon. I have a 24mm f/2.8D, 35mm f/2D, a 50mm f/1.8 that I've had since high school, and a 85mm f/1.8D."
+                            id={24}
+                    />
+                    <UsesItem
+                            itemName="Nikon D40"
+                            itemDescription="Bought for a photo project, intended to celebrate the 20th anniversary of the Nikon D40, the camera I started shooting on."
+                            id={25}
+                    />
+                    <UsesItem
+                            itemName="Canon A-1"
+                            itemDescription="Recent purchase as of August 2025, getting back into film. Coupled with a 50mm f/1.8 FD mount lens."
+                            id={27}
+                    />
+                    <UsesItem
+                            itemName="Nikon F6"
+                            itemDescription="Also a recent purchase as of August 2025, getting back into film."
+                            id={28}
+                    />
+                </div>
             </section>
         </div>
     </div>
