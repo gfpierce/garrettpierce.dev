@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import { urlForImage } from "../sanity/lib/url-for-image";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { SanityDocument } from "@sanity/client";
+import { loadQuery } from "../sanity/lib/load-query";
+const pageTitle = "Photography";
+
+const { data: allGalleries } = await loadQuery<SanityDocument[]>({
+  query: `*[_type == "gallery"]`,
+});
+
+allGalleries.sort((a, b) => new Date(a.createdOn) - new Date(b.createdOn));
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p class="pb-3 font-normal text-lg text-themeGray-800">
+    This is a page for my photography work!
+  </p>
+  <ul class="grid grid-cols-2 md:grid-cols-3 gap-2">
+    {
+      allGalleries.map((gallery) => (
+        <li>
+          <a class="aspect-square" href={`/gallery/${gallery.slug.current}/`}>
+            <div class="aspect-square bg-themeGray-700 rounded-2xl">
+              <Image
+                inferSize
+                src={urlForImage(gallery.leadImage).url()}
+                alt="Sometext"
+                class="object-contain w-full h-full"
+              />
+            </div>
+            <p class="text-center text-themeBlack flex-auto">{gallery.title}</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

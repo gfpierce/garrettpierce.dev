@@ -6,6 +6,18 @@ export const galleryType = defineType({
   title: "Gallery",
   fields: [
     defineField({
+      name: "title",
+      type: "string",
+    }),
+    defineField({
+      name: "slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
+    }),
+    defineField({
       name: "images",
       type: "array",
       title: "Images",
@@ -28,6 +40,13 @@ export const galleryType = defineType({
       ],
       options: {
         layout: "grid",
+      },
+    }),
+    defineField({
+      name: "createdOn",
+      type: "datetime",
+      options: {
+        dateFormat: "YYYY-MM-DD",
       },
     }),
     defineField({
@@ -60,15 +79,15 @@ export const galleryType = defineType({
   preview: {
     select: {
       images: "images",
-      image: "images.0",
+      leadImage: "leadImage",
+      title: "title"
     },
     prepare(selection) {
-      const { images, image } = selection;
+      const { leadImage, title } = selection;
 
       return {
-        title: `Gallery block of ${Object.keys(images).length} images`,
-        subtitle: `Alt text: ${image.alt}`,
-        media: image,
+        title: `${title}`,
+        media: leadImage,
       };
     },
   },

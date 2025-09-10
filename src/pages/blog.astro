@@ -1,5 +1,4 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { loadQuery } from "../sanity/lib/load-query";
 import type { SanityDocument } from "@sanity/client";
@@ -20,7 +19,7 @@ allPosts.sort((a, b) => new Date(a.publishedAt) - new Date(b.publishedAt));
     {
       allPosts.map((post) => (
         <li class="pb-8">
-        <a class="text-themeGray-800 text-xl" href={`/post/${post.slug.current}/`}>{post.title} ({new Date(post.publishedAt).toDateString()})</a>
+          <a class="text-themeGray-800 text-xl" href={`/post/${post.slug.current}/`}>{post.title} ({new Date(post.publishedAt).toDateString()})</a>
         </li>
       ))
     }
