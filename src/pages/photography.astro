@@ -13,10 +13,32 @@ const { data: allGalleries } = await loadQuery<SanityDocument[]>({
 allGalleries.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn));
 ---
 
-<BaseLayout pageTitle={pageTitle} isGallery={false}>
-  <p class="pb-3 font-normal text-lg text-themeGray-800">
-    This is a page for my photography work!
+<BaseLayout pageTitle={pageTitle} isGallery={true}>
+  <p class="pb-3 font-normal text-lg text-themeGray-800 text-center">
+    I have been shooting photos as a hobby since November of 2009, when I was a
+    junior in high school. The galleries on this page represent what I consider
+    to be my best work as of the last few years. A longer history of my
+    photographic work is available on <a
+      target="_blank"
+      href="https://flickr.com/photos/garebear22/">my Flickr profile</a
+    >, which I've maintained since I started shooting in 2009.
   </p>
+  <div class="pb-3 font-normal text-lg text-themeGray-800 text-center">
+    <button class="px-3 py-3 rounded-full bg-themeBlue items-center max-w-xl">
+      <a
+        target="_blank"
+        href="https://flickr.com/photos/garebear22/"><p class="text-themeGray-100 px-3 text-lg font-bold">My Flickr Profile</p></a
+      >
+    </button>
+  </div>
+<div class="pb-3 font-normal text-lg text-themeGray-800 text-center">
+    <button class="px-3 py-3 rounded-full bg-themeTeal items-center max-w-xl">
+      <a
+        href="#work-section"><p class="text-themeGray-100 px-3 text-lg font-bold">My History with Photography</p></a
+      >
+    </button>
+  </div>
+
   <ul class="pb-3 grid grid-cols-2 md:grid-cols-3 gap-2">
     {
       allGalleries.map((gallery) => (
@@ -36,4 +58,30 @@ allGalleries.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn));
       ))
     }
   </ul>
+  <div class="text-center py-3">
+    <h2
+      class="text-2xl font-extrabold text-themeGray-800 pb-3"
+      id="work-section"
+    >
+      My history with photography
+    </h2>
+    <p class="pb-3 font-normal text-lg text-themeGray-800 text-center">
+      I started shooting photos in November 2009, when I was a junior in high
+      school. Inspired by a few friends posting their photos on Facebook, I
+      borrowed my dad's Nikon D40 and walked out the door of my parents' house
+      to shoot on a sunny fall afternoon.
+      <br />
+      <br />
+      Almost everything I shot that day was terrible.
+      <br />
+      <br />
+      But I had a lot of fun with it. So I stuck with it. Before I knew it, I was shooting assignments for my high school's yearbook, and would join their dedicated photo staff the next school year. My love for photography carried over into college, and into the years after college, but has really blossomed in the past few years, as I've been working more consistently and now have money to go and explore incredible places.
+      <br />
+      <br />
+      Now I make images to share the joy of adventure with people around me, capturing the amazing things I'm lucky enough to see in person. I hope you enjoy looking over my work!
+      <br />
+      <br />
+      Thanks for visiting!
+    </p>
+  </div>
 </BaseLayout>
