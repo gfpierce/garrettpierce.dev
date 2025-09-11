@@ -4,18 +4,18 @@ import { urlForImage } from "../sanity/lib/url-for-image";
 import type { SanityAsset } from "@sanity/image-url/lib/types/types";
 
 interface Props {
-    image: SanityAsset;
+  image: SanityAsset;
 }
 
-const {image} = Astro.props;
+const { image } = Astro.props;
 console.log(image);
 ---
 
-<div
-  
-  data-image-modal-wrapper
->
-  <button data-image-modal-trigger class="aspect-square bg-themeGray-700 rounded-2xl">
+<div data-image-modal-wrapper>
+  <button
+    data-image-modal-trigger
+    class="aspect-square bg-themeGray-700 rounded-2xl"
+  >
     <Image
       src={urlForImage(image.url).url()}
       inferSize
@@ -33,36 +33,44 @@ console.log(image);
     <button
       class="absolute top-4 right-4 text-themeGray-100 text-md md:text-lg leading-none"
       aria-label="Close"
-      data-image-modal-close>
+      data-image-modal-close
+    >
       Close
-      </button>
-      <div class="max-w-xl max-h-xl object-contain">
-        <Image inferSize alt='' src={urlForImage(image.url).url()}  class="block max-w-full max-h-full" />
-      </div>
+    </button>
+    <div class="max-w-xl max-h-xl object-contain">
+      <Image
+        inferSize
+        alt=""
+        src={urlForImage(image.url).url()}
+        class="block max-w-full max-h-full"
+      />
+    </div>
   </div>
 </div>
 
 <script>
-    // Controls Modal Overlay behavior
-    document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("[data-image-modal-wrapper]").forEach((wrapper) => {
-            const trigger = wrapper.querySelector("[data-image-modal-trigger]");
-            const overlay = wrapper.querySelector("[data-image-modal-overlay");
-            const closeButton = wrapper.querySelector("[data-image-modal-close]");
+  // Controls Modal Overlay behavior
+  document.addEventListener("DOMContentLoaded", () => {
+    document
+      .querySelectorAll("[data-image-modal-wrapper]")
+      .forEach((wrapper) => {
+        const trigger = wrapper.querySelector("[data-image-modal-trigger]");
+        const overlay = wrapper.querySelector("[data-image-modal-overlay");
+        const closeButton = wrapper.querySelector("[data-image-modal-close]");
 
-            // Show the modal on trigger click
-            trigger.addEventListener("click", () => {
-                overlay.classList.remove("hidden");
-                document.body.style.overflow = "hidden";
-            });
+        // Show the modal on trigger click
+        trigger.addEventListener("click", () => {
+          overlay.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        });
 
-            // Hide the modal on overlay or close button click
-            overlay.addEventListener("click", (event) => {
-                if (event.target === overlay || event.target === closeButton) {
-                    overlay.classList.add("hidden");
-                    document.body.style.overflow = "";
-                }
-            })
-        })
-    })
+        // Hide the modal on overlay or close button click
+        overlay.addEventListener("click", (event) => {
+          if (event.target === overlay || event.target === closeButton) {
+            overlay.classList.add("hidden");
+            document.body.style.overflow = "";
+          }
+        });
+      });
+  });
 </script>
