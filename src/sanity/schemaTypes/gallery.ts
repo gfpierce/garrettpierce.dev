@@ -18,7 +18,7 @@ export const galleryType = defineType({
     }),
     defineField({
       name: "description",
-      type: "string",
+      type: "blockContent",
     }),
     defineField({
       name: "slug",
