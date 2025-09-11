@@ -1,0 +1,60 @@
+---
+import type { GetStaticPaths } from "astro";
+import type { SanityDocument } from "@sanity/client";
+import { loadQuery } from "../../sanity/lib/load-query";
+import PortableText from "../../components/PortableText.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { galleryType } from "../../sanity/schemaTypes/gallery";
+import { urlForImage } from "../../sanity/lib/url-for-image";
+import { Image } from "astro:assets";
+import ImageWithModal from "../../components/ImageWithModal.astro";
+
+export async function getStaticPaths() {
+  const { data: galleries } = await loadQuery<SanityDocument[]>({
+    query: `*[_type == "gallery"]`,
+  });
+
+  return galleries.map(({ slug }) => {
+    return {
+      params: {
+        slug: slug.current,
+      },
+    };
+  });
+}
+
+const { params } = Astro;
+
+const { data: gallery } = await loadQuery({
+  query: `*[_type == "gallery" && slug.current == $slug][0] {
+        title,
+        slug,
+        createdOn,
+        images[] {
+            'url': asset->url,
+        },
+        description
+    }`,
+  params,
+});
+---
+
+<BaseLayout pageTitle={gallery.title} isGallery={true}>
+  <p class="pb-3 text-center font-normal text-lg text-themeGray-800">
+    {gallery.description}
+  </p>
+  <p class="pb-3 text-center font-normal text-lg text-themeGray-800">
+    Click any photo to view it in a larger view.
+  </p>
+  <div
+    class="pb-3 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+  >
+    {
+      gallery.images.map((image) => (
+          <ImageWithModal
+            image={image}
+          />
+      ))
+    }
+  </div>
+</BaseLayout>

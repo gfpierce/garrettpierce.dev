@@ -13,11 +13,11 @@ const { data: allGalleries } = await loadQuery<SanityDocument[]>({
 allGalleries.sort((a, b) => new Date(a.createdOn) - new Date(b.createdOn));
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} isGallery={false}>
   <p class="pb-3 font-normal text-lg text-themeGray-800">
     This is a page for my photography work!
   </p>
-  <ul class="grid grid-cols-2 md:grid-cols-3 gap-2">
+  <ul class="pb-3 grid grid-cols-2 md:grid-cols-3 gap-2">
     {
       allGalleries.map((gallery) => (
         <li>

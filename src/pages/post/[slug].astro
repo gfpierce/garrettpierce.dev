@@ -36,7 +36,7 @@ const { data: post } = await loadQuery({
 });
 ---
 
-<BaseLayout pageTitle={post.title}>
+<BaseLayout pageTitle={post.title} isGallery={false}>
   <h1 class="text-themeGray-800">{post.title}</h1>
   <p class="pb-3 font-normal text-lg text-themeGray-800">
     {new Date(post.publishedAt).toDateString()}
