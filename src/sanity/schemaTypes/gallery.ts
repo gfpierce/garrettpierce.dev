@@ -10,8 +10,15 @@ export const galleryType = defineType({
       type: "string",
     }),
     defineField({
+      name: "createdOn",
+      type: "datetime",
+      options: {
+        dateFormat: "YYYY-MM-DD",
+      },
+    }),
+    defineField({
       name: "description",
-      type: "string"
+      type: "string",
     }),
     defineField({
       name: "slug",
@@ -52,20 +59,12 @@ export const galleryType = defineType({
         layout: "grid",
       },
     }),
-    defineField({
-      name: "createdOn",
-      type: "datetime",
-      options: {
-        dateFormat: "YYYY-MM-DD",
-      },
-    }),
-    
   ],
   preview: {
     select: {
       images: "images",
       leadImage: "leadImage",
-      title: "title"
+      title: "title",
     },
     prepare(selection) {
       const { leadImage, title } = selection;
