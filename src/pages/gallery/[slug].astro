@@ -40,9 +40,12 @@ const { data: gallery } = await loadQuery({
 ---
 
 <BaseLayout pageTitle={gallery.title} isGallery={true}>
-  <p class="pb-3 text-center font-normal text-lg text-themeGray-800">
-    {gallery.description}
-  </p>
+  <div class="text-center flex justify-center">
+    <p class="pb-3 justify-center font-normal text-lg text-themeGray-800">
+      <PortableText portableText={gallery.description} class="text-center" />
+    </p>
+  </div>
+
   <p class="pb-3 text-center font-normal text-lg text-themeGray-800">
     Click any photo to view it in a larger view.
   </p>
