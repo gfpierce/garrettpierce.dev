@@ -10,7 +10,7 @@ const { data: allGalleries } = await loadQuery<SanityDocument[]>({
   query: `*[_type == "gallery"]`,
 });
 
-allGalleries.sort((a, b) => new Date(a.createdOn) - new Date(b.createdOn));
+allGalleries.sort((a, b) => new Date(b.createdOn) - new Date(a.createdOn));
 ---
 
 <BaseLayout pageTitle={pageTitle} isGallery={false}>
