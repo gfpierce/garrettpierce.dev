@@ -10,12 +10,6 @@ export const galleryType = defineType({
       type: "string",
     }),
     defineField({
-      name: "leadImage",
-      type: "image",
-      title: "Lead image",
-      description: "Image for gallery thumbnail",
-    }),
-    defineField({
       name: "description",
       type: "string"
     }),
@@ -26,6 +20,12 @@ export const galleryType = defineType({
         source: "title",
         maxLength: 96,
       },
+    }),
+    defineField({
+      name: "leadImage",
+      type: "image",
+      title: "Lead image",
+      description: "Image for gallery thumbnail",
     }),
     defineField({
       name: "images",
