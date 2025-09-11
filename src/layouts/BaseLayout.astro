@@ -2,8 +2,14 @@
 import Header from "../components/Header.astro";
 import FloatingMenu from "../components/FloatingMenu.astro";
 import Footer from "../components/Footer.astro";
-const { pageTitle } = Astro.props;
+const { pageTitle, isGallery } = Astro.props;
 import { VisualEditing } from "@sanity/astro/visual-editing";
+
+let contentWidthClass = "lg:max-w-xl px-3";
+
+if (isGallery) {
+  contentWidthClass = "lg:max-w-3xl px-3";
+}
 
 const visualEditingEnabled =
   import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
@@ -20,8 +26,8 @@ const visualEditingEnabled =
   <body class="bg-themeGray-100">
     <Header />
     <div class="flex justify-center items-center pt-4 flex-col">
-      <div class="lg:max-w-xl px-3">
-        <div class="text-center  bg-themeGray-100 pb-3">
+      <div class={contentWidthClass}>
+        <div class="text-center bg-themeGray-100 pb-3">
           <h1
             class="pb-3 text-5xl font-extrabold text-themeBlack text-center py-3"
           >

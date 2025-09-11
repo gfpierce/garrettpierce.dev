@@ -1,5 +1,4 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { loadQuery } from "../sanity/lib/load-query";
 import type { SanityDocument } from "@sanity/client";
@@ -12,7 +11,7 @@ const { data: allPosts } = await loadQuery<SanityDocument[]>({
 allPosts.sort((a, b) => new Date(a.publishedAt) - new Date(b.publishedAt));
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} isGallery={false}>
   <p class="pb-3 font-normal text-lg text-themeGray-800">
     Welcome to a collection of my unsolicited thoughts!
   </p>
@@ -20,7 +19,7 @@ allPosts.sort((a, b) => new Date(a.publishedAt) - new Date(b.publishedAt));
     {
       allPosts.map((post) => (
         <li class="pb-8">
-        <a class="text-themeGray-800 text-xl" href={`/post/${post.slug.current}/`}>{post.title} ({new Date(post.publishedAt).toDateString()})</a>
+          <a class="text-themeGray-800 text-xl" href={`/post/${post.slug.current}/`}>{post.title} ({new Date(post.publishedAt).toDateString()})</a>
         </li>
       ))
     }

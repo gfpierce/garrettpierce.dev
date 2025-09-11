@@ -45,8 +45,8 @@ export const postType = defineType({
       name: "publishedAt",
       type: "datetime",
       options: {
-        dateFormat: 'YYYY-MM-DD',
-      }
+        dateFormat: "YYYY-MM-DD",
+      },
     }),
     defineField({
       name: "body",
@@ -55,7 +55,7 @@ export const postType = defineType({
     defineField({
       name: "description",
       type: "string",
-    })
+    }),
   ],
 
   preview: {
