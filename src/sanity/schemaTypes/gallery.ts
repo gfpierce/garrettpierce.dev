@@ -10,6 +10,12 @@ export const galleryType = defineType({
       type: "string",
     }),
     defineField({
+      name: "leadImage",
+      type: "image",
+      title: "Lead image",
+      description: "Image for gallery thumbnail",
+    }),
+    defineField({
       name: "description",
       type: "string"
     }),
@@ -53,32 +59,7 @@ export const galleryType = defineType({
         dateFormat: "YYYY-MM-DD",
       },
     }),
-    defineField({
-      name: "display",
-      type: "string",
-      title: "Display as",
-      description: "How should we display these images?",
-      options: {
-        list: [
-          { title: "Stacked on top of eachother", value: "stacked" },
-          { title: "In-line", value: "inline" },
-          { title: "Carousel", value: "carousel" },
-        ],
-        layout: "radio", // <-- defaults to 'dropdown'
-      },
-    }),
-    defineField({
-      name: "zoom",
-      type: "boolean",
-      title: "Zoom enabled",
-      description: "Should we enable zooming of images?",
-    }),
-    defineField({
-      name: "leadImage",
-      type: "image",
-      title: "Lead image",
-      description: "Image for gallery thumbnail",
-    })
+    
   ],
   preview: {
     select: {
