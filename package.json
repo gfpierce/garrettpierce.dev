@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.0",
+    "@astrojs/alpinejs": "^0.4.9",
     "@astrojs/react": "^4.4.0",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/tailwind": "^6.0.2",
     "@fontsource-variable/inter": "^5.0.18",
     "@portabletext/types": "^2.0.13",
     "@sanity/astro": "^3.2.10",
@@ -23,7 +23,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
     "alpinejs": "^3.14.1",
-    "astro": "^4.11.1",
+    "astro": "^5.14.1",
     "astro-portabletext": "^0.11.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
