@@ -26,7 +26,8 @@ const { image } = Astro.props;
 
   <!-- Modal/Lightbox Overlay -->
   <div
-    class="fixed inset-0 z-50 flex hidden items-center justify-center bg-themeBlack bg-opacity-90"
+    class="fixed max-w-full inset-0 z-50 flex hidden items-center justify-center
+  bg-themeBlack bg-opacity-90 container"
     data-image-modal-overlay
   >
     <button
@@ -36,40 +37,40 @@ const { image } = Astro.props;
     >
       Close
     </button>
-    <div class="max-w-xl max-h-xl object-contain">
+    <div class="lg:max-w-5xl lg:max-h-dvh object-contain">
       <Image
         inferSize
         alt=""
         src={urlForImage(image.url).url()}
-        class="block max-w-full max-h-full"
+        class="max-w-dvh max-h-dvh object-contain p-3"
       />
     </div>
   </div>
+
+  <script>
+    // Controls Modal Overlay behavior
+    document.addEventListener("DOMContentLoaded", () => {
+      document
+        .querySelectorAll("[data-image-modal-wrapper]")
+        .forEach((wrapper) => {
+          const trigger = wrapper.querySelector("[data-image-modal-trigger]");
+          const overlay = wrapper.querySelector("[data-image-modal-overlay");
+          const closeButton = wrapper.querySelector("[data-image-modal-close]");
+
+          // Show the modal on trigger click
+          trigger.addEventListener("click", () => {
+            overlay.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+          });
+
+          // Hide the modal on overlay or close button click
+          overlay.addEventListener("click", (event) => {
+            if (event.target === overlay || event.target === closeButton) {
+              overlay.classList.add("hidden");
+              document.body.style.overflow = "";
+            }
+          });
+        });
+    });
+  </script>
 </div>
-
-<script>
-  // Controls Modal Overlay behavior
-  document.addEventListener("DOMContentLoaded", () => {
-    document
-      .querySelectorAll("[data-image-modal-wrapper]")
-      .forEach((wrapper) => {
-        const trigger = wrapper.querySelector("[data-image-modal-trigger]");
-        const overlay = wrapper.querySelector("[data-image-modal-overlay");
-        const closeButton = wrapper.querySelector("[data-image-modal-close]");
-
-        // Show the modal on trigger click
-        trigger.addEventListener("click", () => {
-          overlay.classList.remove("hidden");
-          document.body.style.overflow = "hidden";
-        });
-
-        // Hide the modal on overlay or close button click
-        overlay.addEventListener("click", (event) => {
-          if (event.target === overlay || event.target === closeButton) {
-            overlay.classList.add("hidden");
-            document.body.style.overflow = "";
-          }
-        });
-      });
-  });
-</script>
