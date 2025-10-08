@@ -1,25 +1,11 @@
 ---
-
+import NavItem from "./NavItem.astro"
 ---
 
-<li>
-  <a href="/" class="text-themeBlack">Home</a>
-</li>
-<li>
-  <a href="/about" class="text-themeBlack">About</a>
-</li>
-<li>
-  <a href="/blog" class="text-themeBlack">Writing</a>
-</li>
-<li>
-  <a href="/photography" class="text-themeBlack">Photography</a>
-</li>
-<li>
-  <a href="/uses" class="text-themeBlack">Uses</a>
-</li>
-<li>
-  <a href="/palette" class="text-themeBlack hidden">Palette</a>
-</li>
-<li>
-  <a href="/now" class="text-themeBlack">Now</a>
-</li>
+<NavItem itemText={"Home"} itemPartialURL={"/"} />
+<NavItem itemText={"About"} itemPartialURL={"/about"} />
+<NavItem itemText={"Writing"} itemPartialURL={"/blog"} />
+<NavItem itemText={"Photography"} itemPartialURL={"/photography"} />
+<NavItem itemText={"Uses"} itemPartialURL={"/uses"} />
+<NavItem itemText={"Palette"} itemPartialURL={"/palette"} hidden={true}/>
+<NavItem itemText={"Now"} itemPartialURL={"/now"} />

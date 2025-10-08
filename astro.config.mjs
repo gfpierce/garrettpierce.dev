@@ -3,7 +3,6 @@ import alpinejs from "@astrojs/alpinejs";
 import tailwind from "@astrojs/tailwind";
 
 import sanity from "@sanity/astro";
-import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +22,5 @@ export default defineConfig({
         studioUrl: "/studio",
       },
     }),
-    react(),
   ],
 });

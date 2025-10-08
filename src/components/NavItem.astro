@@ -1,0 +1,10 @@
+---
+const { itemText, itemPartialURL, hidden } = Astro.props;
+let classes = "text-themeBlack text-lg"
+if (hidden) {
+    classes += " hidden";
+}
+---
+<li>
+  <a href={itemPartialURL} class={classes}>{itemText}</a>
+</li>
